@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV & Portofolio — Suka Raja Amri</title>
+<style>
+:root{
+  --navy:#0f2447; --navy2:#16305e; --navy3:#1f3f7a;
+  --accent:#2f6fed; --accent2:#4c8dff;
+  --gray:#6b7280; --gray-l:#f3f5f9; --gray-b:#e3e8f0;
+  --white:#ffffff; --text:#1f2937;
+  --radius:14px; --shadow:0 8px 30px rgba(15,36,71,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:70px 0}
+.section-title{font-size:1.9rem;color:var(--navy);margin-bottom:6px;position:relative;padding-bottom:12px}
+.section-title::after{content:'';position:absolute;left:0;bottom:0;width:56px;height:4px;background:var(--accent);border-radius:2px}
+.section-sub{color:var(--gray);margin-bottom:34px}
+.bg-gray{background:var(--gray-l)}
+
+/* ===== NAVBAR ===== */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,36,71,.96);backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{color:#fff;font-weight:700;font-size:1.15rem;letter-spacing:.5px}
+.logo span{color:var(--accent2)}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{color:#dbe4f5;padding:8px 12px;border-radius:8px;font-size:.92rem;transition:.25s}
+.nav-links a:hover,.nav-links a.active{background:var(--navy3);color:#fff}
+.hamburger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#254a8c 100%);color:#fff;padding-top:64px}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:50px;align-items:center;width:100%}
+.hero h1{font-size:2.6rem;line-height:1.2;margin-bottom:8px}
+.hero .role{color:var(--accent2);font-size:1.15rem;font-weight:600;margin-bottom:18px}
+.hero p.summary{color:#c6d3ea;max-width:560px;margin-bottom:24px}
+.hero-contact{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px;font-size:.9rem;color:#c6d3ea}
+.hero-contact span{display:flex;align-items:center;gap:6px}
+.btn{display:inline-block;padding:12px 26px;border-radius:10px;font-weight:600;font-size:.95rem;transition:.25s;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-outline:hover{border-color:#fff;transform:translateY(-2px)}
+.hero-photo{width:250px;height:250px;border-radius:50%;object-fit:cover;border:6px solid rgba(255,255,255,.18);box-shadow:0 15px 45px rgba(0,0,0,.35)}
+.hero-photo-placeholder{width:250px;height:250px;border-radius:50%;background:var(--navy3);display:flex;align-items:center;justify-content:center;font-size:4.5rem;color:rgba(255,255,255,.4);border:6px solid rgba(255,255,255,.18)}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative;padding-left:30px;border-left:3px solid var(--gray-b);margin-left:8px}
+.t-item{position:relative;margin-bottom:30px;background:#fff;border:1px solid var(--gray-b);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);transition:.25s}
+.t-item:hover{transform:translateX(4px)}
+.t-item::before{content:'';position:absolute;left:-40px;top:26px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid #fff;box-shadow:0 0 0 3px var(--accent)}
+.t-item h3{color:var(--navy);font-size:1.08rem}
+.t-item .t-sub{color:var(--accent);font-weight:600;font-size:.9rem;margin:2px 0}
+.t-item .t-period{display:inline-block;background:var(--gray-l);color:var(--gray);font-size:.78rem;padding:3px 12px;border-radius:20px;margin:6px 0 8px}
+.t-item p{color:var(--gray);font-size:.92rem}
+
+/* ===== CARDS GRID ===== */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.card{background:#fff;border:1px solid var(--gray-b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,36,71,.16)}
+.card-img{height:180px;overflow:hidden;background:var(--gray-l)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-body{padding:20px}
+.card-body h3{color:var(--navy);font-size:1.05rem;margin-bottom:6px}
+.card-body .meta{color:var(--accent);font-size:.82rem;font-weight:600;margin-bottom:8px}
+.card-body p{color:var(--gray);font-size:.9rem}
+
+/* ===== GALLERY ===== */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;cursor:zoom-in;box-shadow:var(--shadow);aspect-ratio:4/3;background:var(--gray-l)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.gallery-item:hover img{transform:scale(1.07)}
+.gallery-item .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,36,71,.9));color:#fff;font-size:.82rem;padding:26px 12px 10px}
+
+/* ===== CHIPS ===== */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;border:1px solid var(--gray-b);color:var(--navy);padding:8px 18px;border-radius:24px;font-size:.88rem;font-weight:600;box-shadow:0 2px 8px rgba(15,36,71,.06)}
+.chip.lang{background:var(--navy);color:#fff}
+.skill-box{background:#fff;border:1px solid var(--gray-b);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.skill-box h3{color:var(--navy);margin-bottom:16px;font-size:1.1rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+/* ===== NEWS ===== */
+.news-item{background:#fff;border:1px solid var(--gray-b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:260px 1fr;margin-bottom:22px;transition:.3s}
+.news-item:hover{transform:translateY(-4px)}
+.news-item .ni-img{height:100%;min-height:170px;background:var(--gray-l)}
+.news-item .ni-img img{width:100%;height:100%;object-fit:cover}
+.news-item .ni-body{padding:22px}
+.news-item h3{color:var(--navy);font-size:1.1rem;margin-bottom:4px}
+.news-item .date{color:var(--accent);font-size:.8rem;font-weight:600;margin-bottom:8px}
+.news-item p{color:var(--gray);font-size:.9rem}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy);color:#9fb1d1;text-align:center;padding:34px 20px}
+footer .copy{cursor:default;user-select:none;font-size:.9rem}
+footer .copy:hover{color:#c6d3ea}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{position:fixed;inset:0;background:rgba(8,15,30,.92);z-index:3000;display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92%;max-height:88vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox .lb-close{position:absolute;top:22px;right:30px;color:#fff;font-size:2.2rem;cursor:pointer;background:none;border:none}
+
+/* ===== ADMIN ===== */
+.admin-overlay{position:fixed;inset:0;background:rgba(10,18,36,.75);z-index:2000;display:none;backdrop-filter:blur(3px)}
+.admin-overlay.open{display:flex}
+.admin-panel{background:#f6f8fc;width:100%;max-width:1150px;height:92vh;margin:auto;border-radius:16px;overflow:hidden;display:flex;box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .3s}
+@keyframes pop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+.admin-side{width:240px;background:var(--navy);color:#fff;padding:20px 0;overflow-y:auto;flex-shrink:0}
+.admin-side h2{font-size:1rem;padding:0 20px 16px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:12px}
+.admin-side button{display:block;width:100%;text-align:left;background:none;border:none;color:#c6d3ea;padding:11px 20px;font-size:.88rem;cursor:pointer;transition:.2s;border-left:3px solid transparent}
+.admin-side button:hover{background:rgba(255,255,255,.07);color:#fff}
+.admin-side button.active{background:var(--navy3);color:#fff;border-left-color:var(--accent2)}
+.admin-side .dl{margin:14px 16px 0;padding:12px;border-radius:10px;background:var(--accent);color:#fff;text-align:center;font-weight:700;font-size:.85rem}
+.admin-side .dl:hover{background:var(--accent2)}
+.admin-main{flex:1;overflow-y:auto;padding:28px 32px}
+.admin-main h2{color:var(--navy);font-size:1.4rem;margin-bottom:18px}
+.admin-form{background:#fff;border:1px solid var(--gray-b);border-radius:12px;padding:20px;margin-bottom:26px;box-shadow:0 3px 12px rgba(15,36,71,.06)}
+.admin-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.admin-form label{display:block;font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.admin-form input[type=text],.admin-form input[type=email],.admin-form input[type=password],.admin-form input[type=url],.admin-form textarea,.admin-form input[type=date]{width:100%;padding:10px 12px;border:1px solid var(--gray-b);border-radius:8px;font-size:.9rem;font-family:inherit}
+.admin-form textarea{resize:vertical;min-height:70px}
+.admin-form .full{grid-column:1/-1}
+.admin-form .file-note{font-size:.78rem;color:var(--gray);margin-top:4px}
+.admin-form img.preview{max-height:110px;border-radius:8px;margin-top:8px;border:1px solid var(--gray-b)}
+.admin-list .row{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--gray-b);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.admin-list .row img{width:64px;height:48px;object-fit:cover;border-radius:6px}
+.admin-list .row .info{flex:1}
+.admin-list .row .info b{color:var(--navy);font-size:.92rem;display:block}
+.admin-list .row .info small{color:var(--gray)}
+.btn-del{background:#dc2626;color:#fff;border:none;padding:7px 14px;border-radius:8px;font-size:.78rem;cursor:pointer;font-weight:600}
+.btn-del:hover{background:#b91c1c}
+.btn-save{background:var(--accent);color:#fff;border:none;padding:11px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem}
+.btn-save:hover{background:var(--accent2)}
+.admin-close{position:absolute;top:14px;right:18px;background:rgba(255,255,255,.15);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer}
+.empty-note{color:var(--gray);font-style:italic;font-size:.88rem;padding:14px;background:#fff;border:1px dashed var(--gray-b);border-radius:10px;text-align:center}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:12px 26px;border-radius:30px;font-size:.88rem;z-index:5000;opacity:0;transition:.35s;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:30px}
+  .hero p.summary{margin:0 auto 22px}
+  .hero-contact{justify-content:center}
+  .hero-photo,.hero-photo-placeholder{margin:0 auto;width:200px;height:200px}
+  .two-col{grid-template-columns:1fr}
+  .news-item{grid-template-columns:1fr}
+  .news-item .ni-img{min-height:180px}
+  .admin-panel{flex-direction:column;height:94vh}
+  .admin-side{width:100%;display:flex;flex-wrap:wrap;padding:10px}
+  .admin-side h2{width:100%;padding:6px 10px;border:none;margin:0}
+  .admin-side button{width:auto;padding:8px 12px;border-left:none;border-radius:8px}
+  .admin-side .dl{margin:6px;width:100%}
+  .admin-form .form-grid{grid-template-columns:1fr}
+  .nav-links{position:fixed;top:64px;right:0;left:0;background:var(--navy);flex-direction:column;padding:12px;display:none}
+  .nav-links.open{display:flex}
+  .hamburger{display:block}
+  section{padding:50px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">SRA<span>.</span>Portofolio</div>
+    <button class="hamburger" id="hamburger">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#ringkasan">Ringkasan</a></li>
+      <li><a href="#pendidikan">Pendidikan</a></li>
+      <li><a href="#kerja">Kerja</a></li>
+      <li><a href="#organisasi">Organisasi</a></li>
+      <li><a href="#sertifikat">Sertifikat</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#berita">Berita</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="beranda">
+  <div class="container hero-grid">
+    <div>
+      <h1 id="heroName">…</h1>
+      <div class="role" id="heroRole">…</div>
+      <p class="summary" id="heroSummary">…</p>
+      <div class="hero-contact" id="heroContact"></div>
+      <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+      <a href="#berita" class="btn btn-outline" style="margin-left:10px">Berita & Layanan</a>
+    </div>
+    <div id="heroPhotoWrap"></div>
+  </div>
+</header>
+
+<!-- ================= RINGKASAN ================= -->
+<section id="ringkasan">
+  <div class="container">
+    <h2 class="section-title">Ringkasan Profesional</h2>
+    <p class="section-sub">Profil singkat tentang saya</p>
+    <div class="skill-box"><p id="summaryFull" style="color:var(--gray)"></p></div>
+  </div>
+</section>
+
+<!-- ================= PENDIDIKAN ================= -->
+<section id="pendidikan" class="bg-gray">
+  <div class="container">
+    <h2 class="section-title">Pendidikan</h2>
+    <p class="section-sub">Riwayat pendidikan formal</p>
+    <div class="timeline" id="listPendidikan"></div>
+  </div>
+</section>
+
+<!-- ================= KERJA ================= -->
+<section id="kerja">
+  <div class="container">
+    <h2 class="section-title">Pengalaman Kerja</h2>
+    <p class="section-sub">Pengalaman profesional saya</p>
+    <div class="timeline" id="listKerja"></div>
+  </div>
+</section>
+
+<!-- ================= ORGANISASI ================= -->
+<section id="organisasi" class="bg-gray">
+  <div class="container">
+    <h2 class="section-title">Pengalaman Organisasi</h2>
+    <p class="section-sub">Kegiatan keorganisasian</p>
+    <div class="timeline" id="listOrganisasi"></div>
+  </div>
+</section>
+
+<!-- ================= KEPANITIAAN ================= -->
+<section id="kepanitiaan">
+  <div class="container">
+    <h2 class="section-title">Pengalaman Kepanitiaan</h2>
+    <p class="section-sub">Keterlibatan dalam kepanitiaan acara</p>
+    <div class="timeline" id="listKepanitiaan"></div>
+  </div>
+</section>
+
+<!-- ================= SERTIFIKAT ================= -->
+<section id="sertifikat" class="bg-gray">
+  <div class="container">
+    <h2 class="section-title">Sertifikat & Pelatihan</h2>
+    <p class="section-sub">Daftar sertifikat dan dokumentasi pelatihan</p>
+    <div class="timeline" id="listSertTeks" style="margin-bottom:40px"></div>
+    <div class="gallery" id="galeriSertifikat"></div>
+  </div>
+</section>
+
+<!-- ================= KEAHLIAN & BAHASA ================= -->
+<section id="keahlian">
+  <div class="container">
+    <h2 class="section-title">Keahlian & Bahasa</h2>
+    <p class="section-sub">Kompetensi utama dan kemampuan bahasa</p>
+    <div class="two-col">
+      <div class="skill-box"><h3>⚙️ Keahlian</h3><div class="chips" id="chipsKeahlian"></div></div>
+      <div class="skill-box"><h3>🌐 Bahasa</h3><div class="chips" id="chipsBahasa"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROYEK ================= -->
+<section id="proyek" class="bg-gray">
+  <div class="container">
+    <h2 class="section-title">Proyek & Bisnis Mandiri</h2>
+    <p class="section-sub">Portofolio proyek — PT. THE SOLUTIONS GROUP</p>
+    <div class="grid-3" id="gridProyek"></div>
+  </div>
+</section>
+
+<!-- ================= BERITA ================= -->
+<section id="berita">
+  <div class="container">
+    <h2 class="section-title">Berita & Layanan</h2>
+    <p class="section-sub">Kabar terbaru dan layanan yang kami tawarkan</p>
+    <div id="listBerita"></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="copy" id="copyrightText" title="">© 2026 <span id="footerName">Suka Raja Amri</span>. All rights reserved.</div>
+  <div style="font-size:.75rem;margin-top:6px;color:#5c7099">Dibangun dengan HTML, CSS & JavaScript murni</div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">✕</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<!-- ================= ADMIN ================= -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel" style="position:relative">
+    <button class="admin-close" id="adminClose">✕</button>
+    <div class="admin-side" id="adminSide"></div>
+    <div class="admin-main" id="adminMain"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   DATA DEFAULT — diganti otomatis oleh sistem "Download HTML
+   untuk GitHub" saat tombol di Panel Admin ditekan.
+   ============================================================ */
+const defaultData = /*DEFAULT_START*/{
+profile:{
+  name:"Suka Raja Amri",
+  role:"Web Developer & Digital Solutions Consultant",
+  summary:"Profesional di bidang pengembangan web dan solusi digital dengan pengalaman membangun berbagai proyek mandiri melalui PT. THE SOLUTIONS GROUP. Berfokus pada pembuatan website fungsional, elegan, dan mudah dikelola.",
+  email:"sukarajaamri@gmail.com",
+  phone:"+62 812-3456-7890",
+  lokasi:"Indonesia",
+  photo:""
+},
+pendidikan:[
+  {id:1,institusi:"Universitas Negeri Contoh",jurusan:"Teknik Informatika / Sistem Informasi",periode:"2018 – 2022",deskripsi:"Fokus studi pada pengembangan web, basis data, dan sistem informasi. Aktif dalam organisasi mahasiswa."},
+  {id:2,institusi:"SMA Negeri 1 Contoh",jurusan:"Jurusan IPA",periode:"2015 – 2018",deskripsi:"Lulusan dengan predikat baik, aktif sebagai pengurus OSIS."}
+],
+kerja:[
+  {id:1,posisi:"Web Developer / Founder",perusahaan:"PT. THE SOLUTIONS GROUP",periode:"2022 – Sekarang",deskripsi:"Membangun dan mengelola berbagai proyek website untuk UMKM, instansi, dan komunitas. Bertanggung jawab atas perencanaan, pengembangan, hingga deployment."},
+  {id:2,posisi:"Staff IT / Freelance Web",perusahaan:"Berbagai Klien & Instansi",periode:"2020 – 2022",deskripsi:"Mengerjakan proyek pembuatan website company profile, sistem informasi sederhana, dan desain grafis."}
+],
+organisasi:[
+  {id:1,posisi:"Ketua Divisi IT",perusahaan:"Organisasi Mahasiswa Kampus",periode:"2020 – 2021",deskripsi:"Memimpin tim IT dalam mengelola media digital organisasi dan mengembangkan sistem informasi internal."},
+  {id:2,posisi:"Anggota",perusahaan:"Komunitas Pengembang Web Lokal",periode:"2019 – Sekarang",deskripsi:"Aktif berbagi ilmu dan berkolaborasi dalam kegiatan komunitas pengembang web."}
+],
+kepanitiaan:[
+  {id:1,posisi:"Ketua Pelaksana",perusahaan:"Seminar Nasional Teknologi 2023",periode:"2023",deskripsi:"Memimpin seluruh rangkaian kepanitiaan mulai dari perencanaan, koordinasi divisi, hingga pelaksanaan acara dengan 500+ peserta."},
+  {id:2,posisi:"Koordinator Divisi Publikasi",perusahaan:"Festival Kampus 2022",periode:"2022",deskripsi:"Mengelola strategi publikasi, media sosial, dan dokumentasi acara."}
+],
+sertTeks:[
+  {id:1,judul:"Pelatihan Web Development Full-Stack",penerbit:"Dicoding Indonesia",tahun:"2023"},
+  {id:2,judul:"Sertifikat Kompetensi Junior Web Developer",penerbit:"BNSP",tahun:"2022"}
+],
+sertFoto:[],
+skills:{
+  keahlian:["HTML, CSS, JavaScript","PHP & MySQL","WordPress","UI/UX Design Dasar","Git & GitHub","Digital Marketing"],
+  bahasa:["Indonesia (Penutur Asli)","Inggris (Aktif)"]
+},
+proyek:[
+  {id:1,judul:"Website Company Profile UMKM",deskripsi:"Pembuatan website profil perusahaan dengan CMS sederhana untuk membantu UMKM go-online.",gambar:"",link:""},
+  {id:2,judul:"Sistem Informasi Kependudukan",deskripsi:"Sistem pencatatan data warga berbasis web untuk perangkat desa/kelurahan.",gambar:"",link:""},
+  {id:3,judul:"Landing Page Kampanye Digital",deskripsi:"Desain dan pengembangan landing page kampanye dengan optimasi kecepatan & SEO.",gambar:"",link:""}
+],
+berita:[
+  {id:1,judul:"Layanan Pembuatan Website Profesional",tanggal:"2026-01-15",isi:"PT. THE SOLUTIONS GROUP membuka layanan pembuatan website company profile, toko online, dan sistem informasi dengan harga terjangkau untuk UMKM dan organisasi. Hubungi kami untuk konsultasi gratis.",gambar:""},
+  {id:2,judul:"Kunjungan & Pelatihan Digital untuk Mitra",tanggal:"2026-02-10",isi:"Tim kami mengadakan pelatihan pengelolaan website dan media digital bagi mitra binaan agar dapat mengelola konten secara mandiri.",gambar:""}
+]
+}/*DEFAULT_END*/;
+
+/* ============================================================
+   INDEXEDDB — lapisan penyimpanan utama
+   ============================================================ */
+const DB_NAME="cvPortofolioDB", STORE="kv";
+const KEYS=["profile","pendidikan","kerja","organisasi","kepanitiaan","sertTeks","sertFoto","skills","proyek","berita"];
+
+function openDB(){
+  return new Promise((res,rej)=>{
+    const req=indexedDB.open(DB_NAME,1);
+    req.onupgradeneeded=e=>{ e.target.result.createObjectStore(STORE,{keyPath:"key"}); };
+    req.onsuccess=e=>res(e.target.result);
+    req.onerror=()=>rej(req.error);
+  });
+}
+async function dbSet(key,val){
+  const db=await openDB();
+  return new Promise((res,rej)=>{
+    const tx=db.transaction(STORE,"readwrite");
+    tx.objectStore(STORE).put({key:key,value:val});
+    tx.oncomplete=()=>res();
+    tx.onerror=()=>rej(tx.error);
+  });
+}
+async function dbGet(key){
+  const db=await openDB();
+  return new Promise((res,rej)=>{
+    const rq=db.transaction(STORE,"readonly").objectStore(STORE).get(key);
+    rq.onsuccess=()=>res(rq.result?rq.result.value:undefined);
+    rq.onerror=()=>rej(rq.error);
+  });
+}
+
+let DATA={};
+async function initData(){
+  for(const k of KEYS){
+    let v=await dbGet(k);
+    if(v===undefined){ v=JSON.parse(JSON.stringify(defaultData[k])); await dbSet(k,v); }
+    DATA[k]=v;
+  }
+}
+
+/* ============================================================
+   UTIL
+   ============================================================ */
+const $=s=>document.querySelector(s);
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7);}
+function fileToBase64(file){
+  return new Promise((res,rej)=>{
+    const fr=new FileReader();
+    fr.onload=()=>res(fr.result);
+    fr.onerror=()=>rej(fr.error);
+    fr.readAsDataURL(file);
+  });
+}
+function toast(msg){
+  const t=$("#toast"); t.textContent=msg; t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"),2200);
+}
+
+/* ============================================================
+   RENDER HALAMAN PUBLIK
+   ============================================================ */
+function renderAll(){ renderHero(); renderSummary(); renderTimeline("pendidikan","listPendidikan",t=>`<h3>${esc(t.institusi)}</h3><div class="t-sub">${esc(t.jurusan)}</div><span class="t-period">${esc(t.periode)}</span><p>${esc(t.deskripsi)}</p>`);
+  renderTimeline("kerja","listKerja",t=>`<h3>${esc(t.posisi)}</h3><div class="t-sub">${esc(t.perusahaan)}</div><span class="t-period">${esc(t.periode)}</span><p>${esc(t.deskripsi)}</p>`);
+  renderTimeline("organisasi","listOrganisasi",t=>`<h3>${esc(t.posisi)}</h3><div class="t-sub">${esc(t.perusahaan)}</div><span class="t-period">${esc(t.periode)}</span><p>${esc(t.deskripsi)}</p>`);
+  renderTimeline("kepanitiaan","listKepanitiaan",t=>`<h3>${esc(t.posisi)}</h3><div class="t-sub">${esc(t.perusahaan)}</div><span class="t-period">${esc(t.periode)}</span><p>${esc(t.deskripsi)}</p>`);
+  renderTimeline("sertTeks","listSertTeks",t=>`<h3>${esc(t.judul)}</h3><div class="t-sub">${esc(t.penerbit)}</div><span class="t-period">${esc(t.tahun)}</span>`);
+  renderSertFoto(); renderSkills(); renderProyek(); renderBerita(); }
+
+function renderHero(){
+  const p=DATA.profile||{};
+  $("#heroName").textContent=p.name||"Nama Anda";
+  $("#heroRole").textContent=p.role||"";
+  $("#heroSummary").textContent=p.summary||"";
+  $("#footerName").textContent=p.name||"Suka Raja Amri";
+  document.title="CV & Portofolio — "+(p.name||"");
+  const c=$("#heroContact"); c.innerHTML="";
+  if(p.email) c.innerHTML+=`<span>✉️ ${esc(p.email)}</span>`;
+  if(p.phone) c.innerHTML+=`<span>📞 ${esc(p.phone)}</span>`;
+  if(p.lokasi) c.innerHTML+=`<span>📍 ${esc(p.lokasi)}</span>`;
+  $("#heroPhotoWrap").innerHTML=p.photo
+    ? `<img class="hero-photo" src="${p.photo}" alt="Foto Profil">`
+    : `<div class="hero-photo-placeholder">👤</div>`;
+}
+function renderSummary(){ $("#summaryFull").textContent=(DATA.profile||{}).summary||""; }
+
+function renderTimeline(key,elId,tpl){
+  const el=document.getElementById(elId);
+  const arr=DATA[key]||[];
+  el.innerHTML=arr.length?arr.map(i=>`<div class="t-item">${tpl(i)}</div>`).join("")
+    :`<div class="empty-note">Belum ada data.</div>`;
+}
+function renderSertFoto(){
+  const el=$("#galeriSertifikat"); const arr=DATA.sertFoto||[];
+  el.innerHTML=arr.length?arr.map(i=>`<div class="gallery-item" onclick="openLB('${i.img}')"><img src="${i.img}" alt=""><div class="cap">${esc(i.judul||"Sertifikat")}</div></div>`).join("")
+    :`<div class="empty-note">Belum ada foto sertifikat. Tambahkan melalui Panel Admin.</div>`;
+}
+function renderSkills(){
+  const s=DATA.skills||{keahlian:[],bahasa:[]};
+  $("#chipsKeahlian").innerHTML=(s.keahlian||[]).map(x=>`<span class="chip">${esc(x)}</span>`).join("")||'<span class="empty-note">—</span>';
+  $("#chipsBahasa").innerHTML=(s.bahasa||[]).map(x=>`<span class="chip lang">${esc(x)}</span>`).join("")||'<span class="empty-note">—</span>';
+}
+function renderProyek(){
+  const arr=DATA.proyek||[];
+  $("#gridProyek").innerHTML=arr.length?arr.map(i=>`
+    <div class="card">
+      <div class="card-img">${i.gambar?`<img src="${i.gambar}" alt="">`:`<div style="height:100%;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:2.4rem">🗂️</div>`}</div>
+      <div class="card-body"><h3>${esc(i.judul)}</h3><p>${esc(i.deskripsi)}</p>
+      ${i.link?`<p style="margin-top:8px"><a href="${esc(i.link)}" target="_blank">Lihat Detail →</a></p>`:""}</div>
+    </div>`).join(""):`<div class="empty-note">Belum ada proyek.</div>`;
+}
+function renderBerita(){
+  const arr=DATA.berita||[];
+  $("#listBerita").innerHTML=arr.length?arr.map(i=>`
+    <div class="news-item">
+      <div class="ni-img">${i.gambar?`<img src="${i.gambar}" alt="">`:`<div style="height:100%;min-height:170px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:2.4rem">📰</div>`}</div>
+      <div class="ni-body"><div class="date">${esc(i.tanggal||"")}</div><h3>${esc(i.judul)}</h3><p>${esc(i.isi)}</p></div>
+    </div>`).join(""):`<div class="empty-note">Belum ada berita.</div>`;
+}
+
+/* Lightbox */
+function openLB(src){ $("#lbImg").src=src; $("#lightbox").classList.add("open"); }
+$("#lbClose").onclick=()=>$("#lightbox").classList.remove("open");
+$("#lightbox").onclick=e=>{ if(e.target.id==="lightbox") e.currentTarget.classList.remove("open"); };
+
+/* Hamburger */
+$("#hamburger").onclick=()=>$("#navLinks").classList.toggle("open");
+document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>$("#navLinks").classList.remove("open"));
+
+/* ============================================================
+   PANEL ADMIN — akses: double-klik teks copyright di footer
+   ============================================================ */
+const ADMIN_USER="cvku", ADMIN_PASS="cvku";
+let adminOpen=false;
+
+$("#copyrightText").addEventListener("dblclick",()=>{
+  const u=prompt("Username Admin:"); if(u===null) return;
+  const p=prompt("Password Admin:"); if(p===null) return;
+  if(u===ADMIN_USER && p===ADMIN_PASS){ openAdmin(); }
+  else alert("Username atau password salah!");
+});
+$("#adminClose").onclick=()=>{ $("#adminOverlay").classList.remove("open"); adminOpen=false; };
+
+const LIST_MODULES={
+  pendidikan:{title:"Pendidikan",fields:[["institusi","Institusi"],["jurusan","Jurusan / Program Studi"],["periode","Periode"],["deskripsi","Deskripsi","textarea"]]},
+  kerja:{title:"Pengalaman Kerja",fields:[["posisi","Posisi / Jabatan"],["perusahaan","Perusahaan / Instansi"],["periode","Periode"],["deskripsi","Deskripsi","textarea"]]},
+  organisasi:{title:"Pengalaman Organisasi",fields:[["posisi","Jabatan"],["perusahaan","Nama Organisasi"],["periode","Periode"],["deskripsi","Deskripsi","textarea"]]},
+  kepanitiaan:{title:"Pengalaman Kepanitiaan",fields:[["posisi","Peran / Jabatan"],["perusahaan","Nama Acara"],["periode","Tahun / Periode"],["deskripsi","Deskripsi","textarea"]]},
+  sertTeks:{title:"Sertifikat (Teks)",fields:[["judul","Nama Sertifikat / Pelatihan"],["penerbit","Penerbit / Penyelenggara"],["tahun","Tahun"]]},
+  proyek:{title:"Proyek & Bisnis Mandiri",img:true,fields:[["judul","Nama Proyek"],["link","Link (opsional)"],["deskripsi","Deskripsi","textarea"]]},
+  berita:{title:"Berita & Layanan",img:true,date:true,fields:[["judul","Judul Berita"],["isi","Isi Berita","textarea"]]}
+};
+
+function openAdmin(){ adminOpen=true; $("#adminOverlay").classList.add("open"); buildAdminMenu("profil"); }
+
+function buildAdminMenu(active){
+  const side=$("#adminSide");
+  let html=`<h2>⚙️ Panel Admin</h2>
+    <button data-tab="profil" class="${active==='profil'?'active':''}">👤 Profil & Ringkasan</button>
+    <button data-tab="skills" class="${active==='skills'?'active':''}">🛠️ Keahlian & Bahasa</button>`;
+  for(const k in LIST_MODULES) html+=`<button data-tab="${k}" class="${active===k?'active':''}">📄 ${LIST_MODULES[k].title}</button>`;
+  html+=`<button data-tab="sertFoto" class="${active==='sertFoto'?'active':''}">🖼️ Galeri Sertifikat</button>
+    <button id="btnDownloadGH" class="dl">⬇️ Download HTML untuk GitHub</button>
+    <button id="btnReset" style="color:#ff9a9a">🔄 Reset ke Data Awal</button>`;
+  side.innerHTML=html;
+  side.querySelectorAll("button[data-tab]").forEach(b=>b.onclick=()=>buildAdminMenu(b.dataset.tab));
+  $("#btnDownloadGH").onclick=downloadGitHub;
+  $("#btnReset").onclick=async()=>{ if(confirm("Yakin reset SEMUA data ke bawaan? Tindakan ini tidak bisa dibatalkan.")){ for(const k of KEYS){ DATA[k]=JSON.parse(JSON.stringify(defaultData[k])); await dbSet(k,DATA[k]); } renderAll(); buildAdminMenu(active); toast("Data direset ke awal."); } };
+  renderAdminTab(active);
+}
+
+function renderAdminTab(tab){
+  const m=$("#adminMain");
+  if(tab==="profil") return renderAdminProfil(m);
+  if(tab==="skills") return renderAdminSkills(m);
+  if(tab==="sertFoto") return renderAdminSertFoto(m);
+  if(LIST_MODULES[tab]) return renderAdminList(m,tab);
+}
+
+/* ---- Tab: Profil ---- */
+function renderAdminProfil(m){
+  const p=DATA.profile;
+  m.innerHTML=`<h2>Edit Profil & Ringkasan</h2>
+  <div class="admin-form"><div class="form-grid">
+    <div><label>Nama Lengkap</label><input type="text" id="f_name" value="${esc(p.name)}"></div>
+    <div><label>Profesi / Jabatan</label><input type="text" id="f_role" value="${esc(p.role)}"></div>
+    <div><label>Email</label><input type="email" id="f_email" value="${esc(p.email)}"></div>
+    <div><label>No. HP / WA</label><input type="text" id="f_phone" value="${esc(p.phone)}"></div>
+    <div><label>Lokasi</label><input type="text" id="f_lokasi" value="${esc(p.lokasi)}"></div>
+    <div><label>Foto Profil (JPG/PNG)</label><input type="file" id="f_photo" accept="image/*"><div class="file-note">Foto diubah menjadi Base64 lalu disimpan ke IndexedDB.</div>
+      ${p.photo?`<img class="preview" src="${p.photo}">`:""}</div>
+    <div class="full"><label>Ringkasan Profesional</label><textarea id="f_summary" rows="4">${esc(p.summary)}</textarea></div>
+  </div><br><button class="btn-save" id="saveProfil">💾 Simpan Profil</button></div>`;
+  let newPhoto=null;
+  $("#f_photo").onchange=async e=>{ if(e.target.files[0]){ newPhoto=await fileToBase64(e.target.files[0]); toast("Foto siap disimpan."); } };
+  $("#saveProfil").onclick=async()=>{
+    DATA.profile={name:$("#f_name").value,role:$("#f_role").value,email:$("#f_email").value,phone:$("#f_phone").value,lokasi:$("#f_lokasi").value,summary:$("#f_summary").value,photo:newPhoto||p.photo};
+    await dbSet("profile",DATA.profile); renderAll(); toast("Profil tersimpan! ✅");
+  };
+}
+
+/* ---- Tab: Keahlian & Bahasa ---- */
+function renderAdminSkills(m){
+  const s=DATA.skills;
+  m.innerHTML=`<h2>Keahlian & Bahasa</h2>
+  <div class="admin-form">
+    <div class="full" style="margin-bottom:14px"><label>Keahlian (satu per baris)</label><textarea id="f_keahlian" rows="6">${esc((s.keahlian||[]).join("\n"))}</textarea></div>
+    <div class="full" style="margin-bottom:14px"><label>Bahasa (satu per baris)</label><textarea id="f_bahasa" rows="4">${esc((s.bahasa||[]).join("\n"))}</textarea></div>
+    <button class="btn-save" id="saveSkills">💾 Simpan</button>
+  </div>`;
+  $("#saveSkills").onclick=async()=>{
+    DATA.skills={keahlian:$("#f_keahlian").value.split("\n").map(x=>x.trim()).filter(Boolean),bahasa:$("#f_bahasa").value.split("\n").map(x=>x.trim()).filter(Boolean)};
+    await dbSet("skills",DATA.skills); renderAll(); toast("Keahlian & bahasa tersimpan! ✅");
+  };
+}
+
+/* ---- Tab: Galeri Sertifikat (foto) ---- */
+function renderAdminSertFoto(m){
+  const arr=DATA.sertFoto||[];
+  m.innerHTML=`<h2>Galeri Foto Sertifikat</h2>
+  <div class="admin-form">
+    <div class="form-grid">
+      <div><label>Judul / Keterangan Foto</label><input type="file" id="sf_file" accept="image/*" style="display:none">
+        <input type="text" id="sf_judul" placeholder="mis. Sertifikat Pelatihan Web 2024"></div>
+      <div><label>&nbsp;</label><button class="btn-save" style="background:var(--navy)" onclick="document.getElementById('sf_file').click()">📁 Pilih Foto Sertifikat…</button>
+      <div class="file-note" id="sf_note">Belum ada file dipilih.</div></div>
+    </div><br><button class="btn-save" id="sf_add">➕ Tambahkan ke Galeri</button>
+  </div>
+  <div class="admin-list">${arr.length?arr.map(i=>`<div class="row"><img src="${i.img}"><div class="info"><b>${esc(i.judul||"Sertifikat")}</b></div><button class="btn-del" onclick="delItem('sertFoto','${i.id}')">Hapus</button></div>`).join(""):'<div class="empty-note">Belum ada foto.</div>'}</div>`;
+  let base64=null;
+  $("#sf_file").onchange=async e=>{ if(e.target.files[0]){ base64=await fileToBase64(e.target.files[0]); $("#sf_note").textContent="✅ "+e.target.files[0].name+" siap diunggah."; } };
+  $("#sf_add").onclick=async()=>{
+    if(!base64) return alert("Silakan pilih foto terlebih dahulu.");
+    arr.push({id:uid(),judul:$("#sf_judul").value,img:base64});
+    DATA.sertFoto=arr; await dbSet("sertFoto",arr); renderAll(); renderAdminSertFoto(m); toast("Foto sertifikat ditambahkan! ✅");
+  };
+}
+
+/* ---- Tab generik: Tambah & Hapus ---- */
+function renderAdminList(m,key){
+  const cfg=LIST_MODULES[key]; const arr=DATA[key]||[];
+  let fieldsHtml="";
+  cfg.fields.forEach(([k,l,t])=>{
+    const full=(t==="textarea")?"full":"";
+    fieldsHtml+=`<div class="${full}"><label>${l}</label>${t==="textarea"?`<textarea id="af_${k}" rows="3"></textarea>`:`<input type="text" id="af_${k}">`}</div>`;
+  });
+  let imgHtml="";
+  if(cfg.img) imgHtml=`<div class="full"><label>Foto ${cfg.title} (JPG/PNG)</label><input type="file" id="af_img" accept="image/*" style="display:none"></div>`;
+  if(cfg.date) imgHtml=`<div><label>Tanggal</label><input type="date" id="af_tanggal"></div>`;
+  m.innerHTML=`<h2>${cfg.title} — Tambah / Hapus</h2>
+  <div class="admin-form"><div class="form-grid">${fieldsHtml}${imgHtml}</div>
+    ${cfg.img?`<div class="full" style="margin-top:10px"><button class="btn-save" style="background:var(--navy)" type="button" onclick="document.getElementById('af_img').click()">📁 Pilih Foto…</button> <span class="file-note" id="af_note">Belum ada file dipilih.</span></div>`:""}
+    <br><button class="btn-save" id="af_add">➕ Tambah Data</button></div>
+  <div class="admin-list">${arr.length?arr.map(i=>rowHtml(key,i,cfg)).join(""):'<div class="empty-note">Belum ada data.</div>'}</div>`;
+  let base64="";
+  const fi=$("#af_img"); if(fi) fi.onchange=async e=>{ if(e.target.files[0]){ base64=await fileToBase64(e.target.files[0]); $("#af_note").textContent="✅ "+e.target.files[0].name+" siap."; } };
+  $("#af_add").onclick=async()=>{
+    const item={id:uid()};
+    for(const [k] of cfg.fields) item[k]=$("#af_"+k).value.trim();
+    if(cfg.date) item.tanggal=$("#af_tanggal").value;
+    if(cfg.img) item.gambar=base64||"";
+    if(cfg.fields.every(([k])=>!item[k])) return alert("Isi minimal satu kolom.");
+    arr.push(item); DATA[key]=arr; await dbSet(key,arr); renderAll(); renderAdminList(m,key); toast("Data ditambahkan! ✅");
+  };
+}
+function rowHtml(key,i,cfg){
+  const title=i.judul||i.posisi||i.institusi||"Item";
+  const sub=[i.perusahaan,i.jurusan,i.penerbit,i.periode,i.tahun].filter(Boolean).join(" • ");
+  const img=i.gambar?`<img src="${i.gambar}">`:(i.img?`<img src="${i.img}">`:"");
+  return `<div class="row">${img}<div class="info"><b>${esc(title)}</b><small>${esc(sub)}</small></div><button class="btn-del" onclick="delItem('${key}','${i.id}')">Hapus</button></div>`;
+}
+async function delItem(key,id){
+  if(!confirm("Hapus data ini?")) return;
+  DATA[key]=(DATA[key]||[]).filter(x=>String(x.id)!==String(id));
+  await dbSet(key,DATA[key]); renderAll();
+  document.querySelectorAll("#adminMain .admin-list").forEach(()=>{ const active=document.querySelector(".admin-side button.active"); if(active) renderAdminTab(active.dataset.tab); });
+  toast("Data dihapus.");
+}
+
+/* ============================================================
+   DOWNLOAD HTML UNTUK GITHUB (CMS Statis)
+   Mengambil seluruh data IndexedDB → menimpa defaultData
+   → mengunduh file index.html baru siap upload ke GitHub.
+   ============================================================ */
+async function downloadGitHub(){
+  // Pastikan data terbaru terkumpul
+  for(const k of KEYS) DATA[k]=await dbGet(k);
+  // Tutup panel admin sementara agar tidak ikut tersimpan
+  $("#adminOverlay").classList.remove("open");
+  const dataJson=JSON.stringify(DATA).replace(/</g,"\\u003c");
+  let htmlStr="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
+  htmlStr=htmlStr.replace(/\/\*DEFAULT_START\*\/[\s\S]*?\/\*DEFAULT_END\*\//,
+    "/*DEFAULT_START*/"+dataJson+"/*DEFAULT_END*/");
+  const blob=new Blob([htmlStr],{type:"text/html"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="index.html";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+  toast("index.html berhasil diunduh! Upload ke GitHub Anda. 📦");
+  if(adminOpen) $("#adminOverlay").classList.add("open");
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+initData().then(renderAll);
+</script>
+</body>
+</html>
